@@ -1,7 +1,7 @@
 #!/bin/bash
 trap "clean_up" SIGTERM
 function clean_up() {
-    ${HOME}/mcrcon/mcrcon -P ${RCONPORT} -p ${SERVERPASSWORD} -w 1 \
+    ${HOME}/mcrcon/mcrcon -P ${RCONPORT} -p ${SERVERADMINPASSWORD} -w 1 \
     'broadcast Warning!!\nServer stopping in 5' \
     'broadcast Warning!!\nServer stopping in 4' \
     'broadcast Warning!!\nServer stopping in 3' \
