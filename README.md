@@ -31,15 +31,16 @@ This is used to run the built [silentmecha/pixark-linux:latest](https://registry
 
 ### Ports
 Currently the following ports are used.
-|           |       |
-| --------- | ----- |
-| PORT      | 27015 |
-| QUERYPORT | 27016 |
-| CUBEPORT  | 27018 |
-| RCONPORT  | 27017 |
 
-All these ports need to be forwarded through your router except for `RCONPORT` unless you wish to externally RCON into the server.
- 
+| Port      | Default |
+| --------- | ------- |
+| PORT      | 27015   |
+| QUERYPORT | 27016   |
+| CUBEPORT  | 27018   |
+| RCONPORT  | 27017   |
+
+All these ports need to be forwarded through your router except for `RCONPORT` unless you wish to externally RCON into the server. 
+
 ## Notes
 Currently this is based off of Ubuntu 18.04 as there are known issues with steamcmd and Ubuntu 20.04. Once Ubuntu 20.04 is stable I will update the images
 
