@@ -39,7 +39,9 @@ Currently the following ports are used.
 | CUBEPORT  | 27018   |
 | RCONPORT  | 27017   |
 
-All these ports need to be forwarded through your router except for `RCONPORT` unless you wish to externally RCON into the server. 
+All these ports need to be forwarded through your router except for `RCONPORT` unless you wish to externally RCON into the server.
+
+**NB If you change any port in the `.env` file you will also need to change the same port number inside the [run.sh](run.sh) file as PixARK does not like port remapping `eg. -p 28015:27015/udp`**
 
 ## Notes
 Currently this is based off of Ubuntu 18.04 as there are known issues with steamcmd and Ubuntu 20.04. Once Ubuntu 20.04 is stable I will update the images
