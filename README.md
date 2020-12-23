@@ -13,21 +13,21 @@ This is used to run the built [silentmecha/pixark-linux:latest](https://registry
 
 ### Environment Variables
 
-| Variable Name       | Default Value   | Description                                                                  |
-| ------------------- | --------------- | ---------------------------------------------------------------------------- |
-| MAP                 | CubeWorld_Light |                                                                              |
-| SESSIONNAME         | SessionName     | Name of your server as seen in server browser (Accepts spaces)               |
-| SERVERPASSWORD      |                 | Password to enter your server                                                |
-| SERVERADMINPASSWORD | ChangeMe        | Admin access password (also know as RCON password)                           |
-| MAXPLAYERS          | 20              | Maximum number of players                                                    |
-| RCONENABLED         | True            | Enable RCON access (will default to false if `SERVERADMINPASSWORD` is blank) |
-| PORT                | 27015           | Port used to connect to the server                                           |
-| QUERYPORT           | 27016           | Port used to query the server                                                |
-| CUBEPORT            | 27018           | Port used to send world data                                                 |
-| RCONPORT            | 27017           | Port for RCON connections                                                    |
-| CULTUREFORCOOKING   | en              | Must be specified. 'en' for English                                          |
-| CUBEWORLD           | cubeworld       | Name of the folder where your save will go                                   |
-| ADDITIONAL_ARGS     |                 | Currently not used                                                           |
+| Variable Name       | Default Value   | Description                                                                                     |
+| ------------------- | --------------- | ----------------------------------------------------------------------------------------------- |
+| MAP                 | CubeWorld_Light | Type of map to play on curently there is only two options `CubeWorld_Light` and `SkyPiea_Light` |
+| SESSIONNAME         | SessionName     | Name of your server as seen in server browser (Accepts spaces)                                  |
+| SERVERPASSWORD      |                 | Password to enter your server                                                                   |
+| SERVERADMINPASSWORD | ChangeMe        | Admin access password (also know as RCON password)                                              |
+| MAXPLAYERS          | 20              | Maximum number of players                                                                       |
+| RCONENABLED         | True            | Enable RCON access (will default to false if `SERVERADMINPASSWORD` is blank)                    |
+| PORT                | 27015           | Port used to connect to the server                                                              |
+| QUERYPORT           | 27016           | Port used to query the server                                                                   |
+| CUBEPORT            | 27018           | Port used to send world data                                                                    |
+| RCONPORT            | 27017           | Port for RCON connections                                                                       |
+| CULTUREFORCOOKING   | en              | Must be specified. 'en' for English                                                             |
+| CUBEWORLD           | cubeworld       | Name of the folder where your save will go                                                      |
+| ADDITIONAL_ARGS     |                 | Currently not used                                                                              |
 
 ### Ports
 Currently the following ports are used.
