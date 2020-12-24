@@ -1,4 +1,4 @@
-FROM silentmecha/pixark-linux:latest
+FROM silentmecha/pixark-linux:base
 
 LABEL maintainer="silent@silentmecha.co.za"
 
