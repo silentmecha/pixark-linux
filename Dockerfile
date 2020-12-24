@@ -17,7 +17,7 @@ RUN set -x \
 	&& mkdir -p "${STEAMAPPDIR}/ShooterGame/Saved" \
 	&& chmod +x "${HOME}/entry.sh" \
 	&& chown -R "${USER}:${USER}" "${HOME}/entry.sh" "${STEAMAPPDIR}" \
-	&& chmod -R 777 "${STEAMAPPDIR}/ShooterGame/Saved"
+	&& chmod -R 744 "${STEAMAPPDIR}/ShooterGame/Saved"
 
 ENV MAP=CubeWorld_Light\
 	SESSIONNAME=SessionName \
