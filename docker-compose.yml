@@ -1,0 +1,27 @@
+version: "3.4"
+services:
+  server:
+#    command: bash
+    build: .
+    image: silentmecha/pixark-linux:latest
+    restart: unless-stopped
+    ports:
+      - ${PORT}:${PORT}/udp
+      - ${QUERYPORT}:${QUERYPORT}/udp
+      - ${RCONPORT}:${RCONPORT}/tcp
+      - ${CUBEPORT}:${CUBEPORT}/tcp
+    env_file: .env
+    stdin_open: true
+    tty: true
+    volumes:
+      - saved:/home/steam/PixARK-dedicated/ShooterGame/Saved
+  sftp:
+    image: atmoz/sftp
+    restart: unless-stopped
+    volumes:
+      - saved:/home/${SFT_USER}/saved
+    ports:
+      - "${SFT_PORT}:22"
+    command: ${SFT_USER}:${SFT_PASS}:1001
+volumes:
+  saved:
