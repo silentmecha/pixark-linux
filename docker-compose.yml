@@ -22,6 +22,6 @@ services:
       - saved:/home/${SFT_USER}/saved
     ports:
       - "${SFT_PORT}:22"
-    command: ${SFT_USER}:${SFT_PASS}:1001
+    command: ${SFT_USER}:${SFT_PASS}:::saved
 volumes:
   saved:
