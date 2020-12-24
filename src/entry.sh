@@ -20,6 +20,7 @@ fi
 if [ ! -f "${STEAMAPPDIR}/ShooterGame/Saved/Config/WindowsServer/GameUserSettings.ini" ]; then
     #Set Session Name
     mkdir -p "${STEAMAPPDIR}/ShooterGame/Saved/Config/WindowsServer"
+    chmod -R 777 "${STEAMAPPDIR}/ShooterGame/Saved"
     touch ${STEAMAPPDIR}/ShooterGame/Saved/Config/WindowsServer/GameUserSettings.ini && echo -e "[SessionSettings]\r\nSessionName=${SESSIONNAME}" > ${STEAMAPPDIR}/ShooterGame/Saved/Config/WindowsServer/GameUserSettings.ini
 fi
 
