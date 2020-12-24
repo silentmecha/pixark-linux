@@ -17,7 +17,7 @@ if [ ! -d "${HOME}/.wine" ]; then
 fi
 
 # We assume that if the config is missing, that this is a fresh container
-if [! -f "${STEAMAPPDIR}/ShooterGame/Saved/Config/WindowsServer/GameUserSettings.ini" ]; then
+if [ ! -f "${STEAMAPPDIR}/ShooterGame/Saved/Config/WindowsServer/GameUserSettings.ini" ]; then
     #Set Session Name
     mkdir -p "${STEAMAPPDIR}/ShooterGame/Saved/Config/WindowsServer"
     touch ${STEAMAPPDIR}/ShooterGame/Saved/Config/WindowsServer/GameUserSettings.ini && echo -e "[SessionSettings]\r\nSessionName=${SESSIONNAME}" > ${STEAMAPPDIR}/ShooterGame/Saved/Config/WindowsServer/GameUserSettings.ini
