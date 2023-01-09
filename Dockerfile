@@ -5,6 +5,7 @@ LABEL maintainer="silent@silentmecha.co.za"
 ENV STEAMAPP_ID 824360
 ENV STEAMAPP PixARK
 ENV STEAMAPPDIR "${HOME}/${STEAMAPP}-dedicated"
+ENV STEAM_BACKUPDIR "${STEAM_SAVEDIR}/backup"
 
 USER root
 
@@ -39,10 +40,12 @@ USER ${USER}
 
 RUN bash steamcmd \
 	+@sSteamCmdForcePlatformType windows \
-	+login anonymous \
 	+force_install_dir "${STEAMAPPDIR}" \
+	+login anonymous \
 	+app_update "${STEAMAPP_ID}" validate \
 	+quit
+
+# ENV STEAMAPP_BUILDID $(grep buildid < "${STEAMAPPDIR}/steamapps/appmanifest_${STEAMAPP_ID}.acf" | sed 's/"buildid"//' | xargs)
 
 VOLUME ${STEAMAPPDIR}/ShooterGame/Saved
 
