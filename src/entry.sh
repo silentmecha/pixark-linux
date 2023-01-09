@@ -46,10 +46,15 @@ fi
 ##Build full ?Options
 command="${command}?MaxPlayers=${MAXPLAYERS}?CULTUREFORCOOKING=${CULTUREFORCOOKING}"
 
-#Handle -Options
+##Handle all other flags
 arguments=" -NoBattlEye -NoHangDetection"
+#Check if the map seed is defined
 if [ -n "${MAPSEED}" ]; then
     arguments="${arguments} -Seed=${MAPSEED}"
+fi
+#Check if the cluster id is definded
+if [ -n "${CLUSTERID}" ]; then
+    arguments="${arguments} --clusterid=${CLUSTERID}"
 fi
 
 arguments="${arguments} -Port=${PORT} -QueryPort=${QUERYPORT} -RCONPort=${RCONPORT} -CubePort=${CUBEPORT} -cubeworld=${CUBEWORLD} -server -log"
