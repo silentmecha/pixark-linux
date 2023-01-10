@@ -6,6 +6,7 @@ ENV STEAMAPP_ID 824360
 ENV STEAMAPP PixARK
 ENV STEAMAPPDIR "${HOME}/${STEAMAPP}-dedicated"
 ENV STEAM_BACKUPDIR "${STEAM_SAVEDIR}/backup"
+ENV STEAM_SAVEDIR "${STEAMAPPDIR}/ShooterGame/Saved"
 
 USER root
 
@@ -15,10 +16,10 @@ RUN set -x \
 	&& mkdir -p "${STEAMAPPDIR}" \
     && mkdir -p "${HOME}/mcrcon" \
     && wget -c https://github.com/Tiiffi/mcrcon/releases/download/v0.7.1/mcrcon-0.7.1-linux-x86-64.tar.gz -O - | tar -xz -C "${HOME}/mcrcon" --strip-components=1\
-	&& mkdir -p "${STEAMAPPDIR}/ShooterGame/Saved" \
+	&& mkdir -p "${STEAM_SAVEDIR}" \
 	&& chmod +x "${HOME}/entry.sh" \
 	&& chown -R "${USER}:${USER}" "${HOME}/entry.sh" "${STEAMAPPDIR}" \
-	&& chmod -R 744 "${STEAMAPPDIR}/ShooterGame/Saved"
+	&& chmod -R 744 "${STEAM_SAVEDIR}"
 
 ENV MAP=CubeWorld_Light\
 	SESSIONNAME=SessionName \
@@ -33,6 +34,7 @@ ENV MAP=CubeWorld_Light\
 	CULTUREFORCOOKING=en \
 	CUBEWORLD=cubeworld \
 	CLUSTERID= \
+	ALTSAVEDIRECTORYNAME= \
 	MAPSEED= \
 	ADDITIONAL_ARGS=
 
@@ -48,7 +50,7 @@ RUN bash steamcmd \
 
 # ENV STEAMAPP_BUILDID $(grep buildid < "${STEAMAPPDIR}/steamapps/appmanifest_${STEAMAPP_ID}.acf" | sed 's/"buildid"//' | xargs)
 
-VOLUME ${STEAMAPPDIR}/ShooterGame/Saved
+VOLUME "${STEAM_SAVEDIR}"
 
 WORKDIR ${HOME}
 

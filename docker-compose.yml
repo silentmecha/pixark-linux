@@ -14,14 +14,15 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - saved:/home/steam/PixARK-dedicated/ShooterGame/Saved
+      - save_data:/home/steam/PixARK-dedicated/ShooterGame/Saved
   sftp:
     image: atmoz/sftp
     restart: unless-stopped
     volumes:
-      - saved:/home/${SFT_USER}/saved
+      - save_data:/home/${SFT_USER}/saved
     ports:
       - "${SFT_PORT}:22"
     command: ${SFT_USER}:${SFT_PASS}:::saved
 volumes:
-  saved:
+  save_data:
+#    name: ${CLUSTERID}_saved
